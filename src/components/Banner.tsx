@@ -1,8 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import bannerImage from '../assets/banner1.png';
+import React from "react";
+import { motion } from "framer-motion";
+import bannerImage from "../assets/banner1.png";
 
 const Banner: React.FC = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "+6285841722279";
+    const message = encodeURIComponent(
+      "Halo, saya tertarik dengan layanan Anda."
+    );
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -26,7 +34,7 @@ const Banner: React.FC = () => {
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text"
         >
           Transformasi Digital
@@ -34,7 +42,7 @@ const Banner: React.FC = () => {
         <motion.h4
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text"
         >
           Bersama <span className="text-white">Logic Frame</span>
@@ -44,20 +52,24 @@ const Banner: React.FC = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="text-lg md:text-xl mt-6 max-w-2xl mx-auto text-gray-300"
         >
-          Solusi cerdas untuk kebutuhan bisnis dan teknologi Anda. Ciptakan masa depan yang lebih inovatif.
+          Solusi cerdas untuk kebutuhan bisnis dan teknologi Anda. Ciptakan masa
+          depan yang lebih inovatif.
         </motion.p>
 
         {/* Glassmorphism Effect */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-8 backdrop-blur-lg bg-white/10 p-6 rounded-2xl border border-white/20 shadow-lg"
         >
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+          <button
+            onClick={handleWhatsAppClick}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105"
+          >
             Mulai Sekarang
           </button>
         </motion.div>

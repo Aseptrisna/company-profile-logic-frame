@@ -1,14 +1,14 @@
-import React from 'react';
-import { FaLinkedin, FaGlobe } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa6';
+import React from "react";
+import { FaLinkedin, FaGlobe } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 
 // Import gambar dari src/assets/team
-import imageAsep from '../assets/team/asep.jpg';
-import imageDiko from '../assets/team/diko.png';
-import imageRomi from '../assets/team/romi.jpeg';
-import imageBudi from '../assets/team/budi.jpg';
-import imageBram from '../assets/team/bram.jpeg';
-import imageAji from '../assets/team/aji.jpg';
+import imageAsep from "../assets/team/asep.jpg";
+import imageDiko from "../assets/team/diko.jpg";
+import imageRomi from "../assets/team/romi.jpeg";
+import imageBudi from "../assets/team/budi.jpg";
+import imageBram from "../assets/team/bram.jpeg";
+import imageAji from "../assets/team/aji.jpg";
 
 interface TeamMember {
   id: number;
@@ -21,47 +21,47 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { 
-    id: 1, 
-    name: 'Asep Trisna Setiawan', 
-    role: 'Lead Software Engineer & CEO', 
-    image: imageAsep, 
-    urlWebsite: 'https://asep-trisna-setiawan.sta.my.id' 
+  {
+    id: 1,
+    name: "Asep Trisna Setiawan",
+    role: "Lead Software Engineer & CEO",
+    image: imageAsep,
+    urlWebsite: "https://asep-trisna-setiawan.sta.my.id",
   },
-  { 
-    id: 2, 
-    name: 'Diko Prasojo', 
-    role: 'UI/UX Designer & Creative Strategist', 
-    image: imageDiko, 
-    urlWebsite: 'https://diko-prasojo.sta.my.id' 
+  {
+    id: 2,
+    name: "Diko Prasojo",
+    role: "UI/UX Designer & Creative Strategist",
+    image: imageDiko,
+    urlIg: "https://www.instagram.com/nafassantuy",
   },
-  { 
-    id: 3, 
-    name: 'Romi Ardianto', 
-    role: 'Marketing & Creative Strategist', 
-    image: imageRomi, 
-    urlWebsite: 'https://romi-ardianto.sta.my.id' 
+  {
+    id: 3,
+    name: "Romi Ardianto",
+    role: "Marketing & Creative Strategist",
+    image: imageRomi,
+    urlIg: "https://www.instagram.com/mr.romiardianto",
   },
-  { 
-    id: 4, 
-    name: 'Rachmad Budianto', 
-    role: 'Frontend Developer', 
-    image: imageBudi, 
-    urlWebsite: 'https://rachmad-udianto.my.id'  
+  {
+    id: 4,
+    name: "Rachmad Budianto",
+    role: "Frontend Developer",
+    image: imageBudi,
+    urlWebsite: "https://rachmadbud.github.io",
   },
-  { 
-    id: 5, 
-    name: 'Bram Krisna Danu', 
-    role: 'Backend Developer', 
-    image: imageBram, 
-    urlWebsite: 'https://bram-krisna-danu.sta.my.id'  
+  {
+    id: 5,
+    name: "Bram Krisna Danu",
+    role: "Backend Developer",
+    image: imageBram,
+    urlLinkedin: "https://id.linkedin.com/in/bram-krisna-danu-b33b771a3",
   },
-  { 
-    id: 6, 
-    name: 'M. Aji Perdana', 
-    role: 'AI/ML Engineer', 
-    image: imageAji, 
-    urlWebsite: 'https://aji-perdana.sta.my.id' 
+  {
+    id: 6,
+    name: "M. Aji Perdana",
+    role: "AI/ML Engineer",
+    image: imageAji,
+    urlWebsite: "https://portfolio-aji.vercel.app",
   },
 ];
 
@@ -69,7 +69,9 @@ const Tim: React.FC = () => {
   return (
     <section id="tim" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Tim Kami</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+          Tim Kami
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member) => (
             <div
@@ -86,36 +88,40 @@ const Tim: React.FC = () => {
               </div>
 
               {/* Nama dan Role */}
-              <h3 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h3>
-              <p className="text-gray-600 text-sm text-center mb-4">{member.role}</p>
+              <h3 className="text-xl font-semibold text-gray-900 text-center">
+                {member.name}
+              </h3>
+              <p className="text-gray-600 text-sm text-center mb-4">
+                {member.role}
+              </p>
 
               {/* Ikon Sosial Media */}
               <div className="mt-auto flex justify-center space-x-4">
                 {member.urlLinkedin && (
-                  <a 
-                    href={member.urlLinkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={member.urlLinkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-700 hover:text-blue-900 text-2xl transition-transform transform hover:scale-110"
                   >
                     <FaLinkedin />
                   </a>
                 )}
                 {member.urlIg && (
-                  <a 
-                    href={member.urlIg} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={member.urlIg}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-pink-600 hover:text-pink-800 text-2xl transition-transform transform hover:scale-110"
                   >
                     <FaInstagram />
                   </a>
                 )}
                 {member.urlWebsite && (
-                  <a 
-                    href={member.urlWebsite} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={member.urlWebsite}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-green-600 hover:text-green-800 text-2xl transition-transform transform hover:scale-110"
                   >
                     <FaGlobe />
