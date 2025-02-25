@@ -10,6 +10,9 @@ import imagePetik from '../assets/product/petik.png';
 import imageSmartSystem from '../assets/product/ss.png';
 import imageDtc from '../assets/product/dtc.png';
 import imageConservasi from '../assets/product/conservasi.png';
+import imageASPRG from '../assets/product/asprg.jpg';
+import imageLSKKStudio from '../assets/product/lskkstudio.jpg';
+
 
 interface Product {
   id: number;
@@ -29,6 +32,8 @@ const products: Product[] = [
   { id: 7, name: 'SMART SYSTEM ID', image: imageSmartSystem, description: 'Website SMART SYSTEM ID', url: 'https://www.smartsystem.id' },
   { id: 8, name: 'DTC', image: imageDtc, description: 'Website Digital Transformasi Center', url: 'https://dtc.pptik.id' },
   { id: 9, name: 'PPTIK CONSERVASI', image: imageConservasi, description: 'Website PPTIK CONSERVASI', url: 'https://conservation.pptik.id' },
+  { id: 10, name: 'ASPRG', image: imageASPRG, description: 'Website ASP Research Group', url: 'https://asprg.smartsystem.id' },
+  { id: 10, name: 'LSKK Studio', image: imageLSKKStudio, description: 'Website LSKK Studio', url: 'https://studio.lskk.co.id' },
 ];
 
 const Katalog: React.FC = () => {

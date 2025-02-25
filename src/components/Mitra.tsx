@@ -1,6 +1,7 @@
 import React from 'react';
 import imageLskk from '../assets/mitra/lskk.jpeg';
 import imagePustekhan from '../assets/mitra/pustekhan.jpeg';
+import imageMandatera from '../assets/mitra/mandatera.png';
 
 interface Partner {
   id: number;
@@ -11,8 +12,9 @@ interface Partner {
 
 const Mitra: React.FC = () => {
   const partners: Partner[] = [
-    { id: 1, name: 'PT. LSKK', logo:imageLskk, website: 'https://www.lskk.co.id' },
-    { id: 2, name: 'Pustekhan ITB', logo: imagePustekhan, website: 'https://pustekhan.itb.ac.id' },
+    { id: 1, name: 'Mandatera', logo: imageMandatera, website: 'https://www.mandatera.id' },
+    { id: 2, name: 'PT. LSKK', logo:imageLskk, website: 'https://www.lskk.co.id' },
+    { id: 3, name: 'Pustekhan ITB', logo: imagePustekhan, website: 'https://pustekhan.itb.ac.id' },
   ];
 
   return (

@@ -13,6 +13,7 @@ export default {
   module.exports = {
     theme: {
       extend: {
+        scrollBehavior: ['smooth'],
         screens: {
           'sm': '640px',
           'md': '768px',

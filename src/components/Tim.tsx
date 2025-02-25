@@ -34,6 +34,8 @@ const team: TeamMember[] = [
     role: "UI/UX Designer & Creative Strategist",
     image: imageDiko,
     urlIg: "https://www.instagram.com/nafassantuy",
+    urlWebsite:"https://planet.smartsystem.id/diko",
+    urlLinkedin:"http://www.linkedin.com/in/diko-prasojo"
   },
   {
     id: 3,
@@ -48,6 +50,7 @@ const team: TeamMember[] = [
     role: "Frontend Developer",
     image: imageBudi,
     urlWebsite: "https://rachmadbud.github.io",
+    urlIg: "https://www.instagram.com/rachmadbud?igsh=NnUzM3htZndqcG93&utm_source=qr",
   },
   {
     id: 5,
