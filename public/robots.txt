@@ -1,0 +1,20 @@
+# robots.txt for PT. Logic Frame Indonesia
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://logic-frame-indonesia.sta.my.id/sitemap.xml
+
+# Block admin/private paths if any
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

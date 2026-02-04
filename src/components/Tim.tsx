@@ -1,8 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 
-// Import gambar dari src/assets/team
 import imageAsep from "../assets/team/asep.jpg";
 import imageDiko from "../assets/team/diko.jpg";
 import imageRomi from "../assets/team/romi.jpeg";
@@ -70,44 +70,75 @@ const team: TeamMember[] = [
 
 const Tim: React.FC = () => {
   return (
-    <section id="tim" className="py-16 bg-gray-50">
+    <section id="tim" className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-          Tim Kami
-        </h2>
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            Tim Kami
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Bertemu dengan para profesional berbakat yang membuat semuanya terjadi
+          </p>
+        </motion.div>
+
+        {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member) => (
-            <div
+          {team.map((member, index) => (
+            <motion.div
               key={member.id}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center relative overflow-hidden border border-gray-100"
             >
-              {/* Gambar Profil */}
-              <div className="w-32 h-32 mb-6 overflow-hidden rounded-full border-4 border-blue-500 shadow-md">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
+              {/* Background Gradient on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              {/* Profile Image */}
+              <div className="relative mb-6">
+                <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-blue-500 shadow-lg group-hover:border-purple-500 transition-colors duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                
+                {/* Status Indicator */}
+                <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
               </div>
 
-              {/* Nama dan Role */}
-              <h3 className="text-xl font-semibold text-gray-900 text-center">
-                {member.name}
-              </h3>
-              <p className="text-gray-600 text-sm text-center mb-4">
-                {member.role}
-              </p>
+              {/* Name and Role */}
+              <div className="relative z-10 text-center mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {member.name}
+                </h3>
+                <p className="text-gray-600 text-sm font-medium">
+                  {member.role}
+                </p>
+              </div>
 
-              {/* Ikon Sosial Media */}
-              <div className="mt-auto flex justify-center space-x-4">
+              {/* Social Media Icons */}
+              <div className="relative z-10 flex justify-center space-x-4 mt-auto">
                 {member.urlLinkedin && (
                   <a
                     href={member.urlLinkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-700 hover:text-blue-900 text-2xl transition-transform transform hover:scale-110"
+                    className="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-700 hover:text-white transition-all duration-300 hover:scale-110"
+                    aria-label={`LinkedIn ${member.name}`}
                   >
-                    <FaLinkedin />
+                    <FaLinkedin className="text-xl" />
                   </a>
                 )}
                 {member.urlIg && (
@@ -115,9 +146,10 @@ const Tim: React.FC = () => {
                     href={member.urlIg}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-pink-600 hover:text-pink-800 text-2xl transition-transform transform hover:scale-110"
+                    className="w-10 h-10 flex items-center justify-center bg-pink-100 text-pink-600 rounded-full hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 hover:text-white transition-all duration-300 hover:scale-110"
+                    aria-label={`Instagram ${member.name}`}
                   >
-                    <FaInstagram />
+                    <FaInstagram className="text-xl" />
                   </a>
                 )}
                 {member.urlWebsite && (
@@ -125,13 +157,14 @@ const Tim: React.FC = () => {
                     href={member.urlWebsite}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-600 hover:text-green-800 text-2xl transition-transform transform hover:scale-110"
+                    className="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-all duration-300 hover:scale-110"
+                    aria-label={`Website ${member.name}`}
                   >
-                    <FaGlobe />
+                    <FaGlobe className="text-xl" />
                   </a>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

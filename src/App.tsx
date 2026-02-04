@@ -62,43 +62,51 @@ const App: React.FC = () => {
       ) : (
         <>
           <Header toggleTheme={toggleTheme} theme={theme} />
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <Banner />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Katalog />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Portofolio />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Tim />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Mitra />
-          </motion.div>
+          <main>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+              <Banner />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <Katalog />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <Portofolio />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <Tim />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <Mitra />
+            </motion.div>
+          </main>
           <Footer />
 
           {/* Tombol WhatsApp */}
           {showWhatsApp && (
-            <a
+            <motion.a
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
               href={`https://wa.me/${phoneNumber}?text=${message}`}
               target="_blank"
-              className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center"
+              className="fixed bottom-24 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:shadow-green-500/50 transition-all duration-300 flex items-center z-40"
             >
               <FaWhatsapp className="text-2xl" />
-              <span className="ml-2">Chat dengan Kami</span>
-            </a>
+              <span className="ml-2 font-semibold">Chat dengan Kami</span>
+            </motion.a>
           )}
 
           {/* Tombol Scroll to Top */}
           {showScroll && (
-            <button
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
               onClick={scrollToTop}
-              className="fixed bottom-6 left-6 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+              className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:shadow-blue-500/50 transition-all duration-300 z-40"
+              aria-label="Scroll to top"
             >
               <FaArrowUp className="text-xl" />
-            </button>
+            </motion.button>
           )}
         </>
       )}
