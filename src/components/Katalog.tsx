@@ -12,6 +12,7 @@ import imageDtc from '../assets/product/dtc.png';
 import imageConservasi from '../assets/product/conservasi.png';
 import imageASPRG from '../assets/product/asprg.jpg';
 import imageLSKKStudio from '../assets/product/lskkstudio.jpg';
+import imageCariscoVariasi from '../assets/product/carisco-variasi.jpeg';
 
 interface Product {
   id: number;
@@ -34,7 +35,7 @@ const products: Product[] = [
   { id: 9, name: 'PPTIK CONSERVASI', image: imageConservasi, description: 'Website PPTIK CONSERVASI', url: 'https://conservation.pptik.id', tags: ['Web', 'Konservasi'] },
   { id: 10, name: 'ASPRG', image: imageASPRG, description: 'Website ASP Research Group', url: 'https://asprg.smartsystem.id', tags: ['Web', 'Research'] },
   { id: 11, name: 'LSKK Studio', image: imageLSKKStudio, description: 'Website LSKK Studio', url: 'https://studio.lskk.co.id', tags: ['Web', 'Studio'] },
-  { id: 13, name: 'Carisco Variasi', image: imageLSKKStudio, description: 'Website Carisco Variasi', url: 'https://carisco-variasi.sta.my.id', tags: ['Web', 'Company Profile'] },
+  { id: 13, name: 'Carisco Variasi', image: imageCariscoVariasi, description: 'Website Carisco Variasi', url: 'https://carisco-variasi.sta.my.id', tags: ['Web', 'Company Profile'] },
   { id: 13, name: 'Andi Bekam', image: imageLSKKStudio, description: 'Website Bekam Andi', url: 'https://bekam-andi.sta.my.id', tags: ['Web', 'Company Profile'] },
 ];
 
